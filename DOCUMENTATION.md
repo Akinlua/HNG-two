@@ -196,13 +196,10 @@ If a wrong ID was inputted you could get the below error
 
 . Body: 
 
-{
-
     {
         "error": "Person Not Found"
     }
     
-}
 If the url isn't correct or doesn't exist, you would get the below error
 
 . Body: 
