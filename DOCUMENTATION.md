@@ -192,15 +192,19 @@ Description: Delete a specific person by their ID
 ##### HTTP Status: 404 Not Found
 Content-Type: application/json
 
-###### if a wrong ID was inputted you could get the below error
+If a wrong ID was inputted you could get the below error
+
 . Body: 
 
 {
 
-    "error": "Person Not Found"
+    {
+        "error": "Person Not Found"
+    }
     
 }
-###### if the url isn't correct or doesn't exist, you would get the below error
+If the url isn't correct or doesn't exist, you would get the below error
+
 . Body: 
 
 {
@@ -209,7 +213,8 @@ Content-Type: application/json
 
 }
 
-###### Cast error: if there was a problem with the id in the url, an error similar to the below will show
+Cast error: if there was a problem with the id in the url, an error similar to the below will show
+
 . Body: 
 
 {
@@ -221,7 +226,8 @@ Content-Type: application/json
 ##### HTTP Status: 400 Bad Request
 Content-Type: application/json
 
-###### Validation error: if there was an error with your input such as not providing a name you will receive a similar error to the one below with the exact problem
+Validation error: if there was an error with your input such as not providing a name you will receive a similar error to the one below with the exact problem
+
 . Body: 
 
 {
@@ -233,7 +239,7 @@ Content-Type: application/json
 ##### HTTP Status: 500 Internal Server Error
 Content-Type: application/json
 
-###### if there was any other error with the server, you will get the below error
+If there was any other error with the server, you will get the below error
 
 .Body:
 
