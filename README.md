@@ -73,6 +73,7 @@ Content-Type: application/json
     }
 
 .Response:
+
     {
         "person": {
             "name": "Elon Musk",
@@ -106,6 +107,7 @@ Content-Type: application/json
     }
 
 .Response:
+
     {   
         "person": {
             "name": "Updated Elon Musk",
@@ -116,7 +118,9 @@ Content-Type: application/json
 ### Delete A person
 
 DELETE /api/{id}
+
 .Response:
+
     {
         "message": "Person 'Updated Elon Musk' has been deleted"
     }
