@@ -52,6 +52,8 @@ To start the API Locally, run:
 
 npm start
 
+Your API will be accessible at `http://localhost:PORT`
+
 ## API Full Documentation
 The full API docs can be found in the file `DOCUMENTATION.md`
 
