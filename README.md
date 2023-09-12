@@ -66,11 +66,9 @@ POST http://localhost:3000/api
 
 Content-Type: application/json
 
-{
-
-    "name": "Elon Musk"
-
-}
+    {
+        "name": "Elon Musk"
+    }
 
 ### Read a Person
 GET http://localhost:3000/api/{id}
@@ -80,11 +78,9 @@ PATCH http://localhost:3000/api/{id}
 
 Content-Type: application/json
 
-{
-
-    "name": "Updated Elon Musk"
-
-}
+    {
+        "name": "Updated Elon Musk"
+    }
 
 ### Delete A person
 

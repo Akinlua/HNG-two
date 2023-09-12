@@ -44,30 +44,22 @@ Content-Type: application/json
 Description: Creates a new person with the name provided in the request body and responds with the same name and it's id
 
 ###### Request Body: 
-{
-
-    "name": "Elon Musk"
-
-}
+    {
+        "name": "Elon Musk"
+    }
 ###### Response: 
 
 . HTTP Status: 201 Created 
 
 . Body: 
 
-{
-
-    "person": {
-
-        "name": "Elon Musk",
-
-        "_id": "64fecbf1623b0333646ac6cb",
-
-        "__v": 0
-
+    {
+        "person": {
+            "name": "Elon Musk",
+            "_id": "64fecbf1623b0333646ac6cb",
+            "__v": 0
+        }
     }
-
-}
 
 
 ##### Read Persons
@@ -81,33 +73,20 @@ Description: Retrieves a list of all persons with their name and respective id
 
 . Body: 
 
-{
-
-    "persons": [
-
-        {
-
-            "_id": "64fe08323ef60e82c11ca710",
-            
-            "name": "femi",
-
-            "__v": 0
-
-        },
-
-        {
-
-            "_id": "64fecbf1623b0333646ac6cb",
-
-            "name": "Elon Musk",
-
-            "__v": 0
-
-        }
-
-    ]
-
-}
+    {
+        "persons": [
+            {
+                "_id": "64fe08323ef60e82c11ca710",
+                "name": "femi",
+                "__v": 0
+            },
+            {
+                "_id": "64fecbf1623b0333646ac6cb",
+                "name": "Elon Musk",
+                "__v": 0
+            }
+        ]
+    }
 
 
 ##### Read A Person
@@ -121,19 +100,13 @@ Description: Retrieves a specfic person by their ID
 
 . Body: 
 
-{
-
-    "person": {
-
-        "_id": "64fecbf1623b0333646ac6cb",
-
-        "name": "Elon Musk",
-
-        "__v": 0
-
+    {
+        "person": {
+            "_id": "64fecbf1623b0333646ac6cb",
+            "name": "Elon Musk",
+            "__v": 0
+        }
     }
-    
-}
 
 
 ##### Update A Person
@@ -145,29 +118,21 @@ Content-Type: application/json
 Description: Update the name of a specific person by their ID
 
 ###### Request Body: 
-{
-
-    "name": "Updated Elon Musk"
-
-}
+    {
+        "name": "Updated Elon Musk"
+    }
 ###### Response: 
 . HTTP Status: 200 OK
 
 . Body: 
 
-{
-
-    "person": {
-
-        "name": "Updated Elon Musk",
-
-        "_id": "64fecbf1623b0333646ac6cb",
-
-        "__v": 0
-
+    {   
+        "person": {
+            "name": "Updated Elon Musk",
+            "_id": "64fecbf1623b0333646ac6cb",
+            "__v": 0
+        }
     }
-
-}
 
 
 ##### Delete A Person
@@ -181,11 +146,9 @@ Description: Delete a specific person by their ID
 
 . Body: 
 
-{
-
-    "message": "Person 'Updated Elon Musk' has been deleted"
-
-}
+    {
+        "message": "Person 'Updated Elon Musk' has been deleted"
+    }
 
 #### Error Responses
 
@@ -204,21 +167,17 @@ If the url isn't correct or doesn't exist, you would get the below error
 
 . Body: 
 
-{
-
-    "error": "Not Found"
-
-}
+    {
+        "error": "Not Found"
+    }
 
 Cast error: if there was a problem with the id in the url, an error similar to the below will show
 
 . Body: 
 
-{
-
-    "error": "No item found with id: 64fe0e3c5"
-    
-}
+    {
+        "error": "No item found with id: 64fe0e3c5"
+    }
 
 ##### HTTP Status: 400 Bad Request
 Content-Type: application/json
@@ -227,11 +186,9 @@ Validation error: if there was an error with your input such as not providing a 
 
 . Body: 
 
-{
-
-    "error": "Validation Error: must provide a name""
-
-}
+    {
+        "error": "Validation Error: must provide a name""
+    }
 
 ##### HTTP Status: 500 Internal Server Error
 Content-Type: application/json
@@ -240,11 +197,9 @@ If there was any other error with the server, you will get the below error
 
 .Body:
 
-{
-
-    "error": "Something Went wrong"
-
-}
+    {
+        "error": "Something Went wrong"
+    }
 
 #### Limitation
 .The name field is not unique as a result, the API operations are performed using the id of the person
