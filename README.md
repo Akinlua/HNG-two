@@ -62,7 +62,7 @@ You can use any application such as Postman to make the requests
 
 ### Create A person
 
-POST http://localhost:3000/api
+POST /api
 
 Content-Type: application/json
 
@@ -82,7 +82,7 @@ Content-Type: application/json
     }
 
 ### Read a Person
-GET http://localhost:3000/api/{id}
+GET /api/{id}
 
 .Response:
 
@@ -95,7 +95,7 @@ GET http://localhost:3000/api/{id}
     }
 
 ### Update a Person
-PATCH http://localhost:3000/api/{id}
+PATCH /api/{id}
 
 Content-Type: application/json
 
@@ -115,7 +115,7 @@ Content-Type: application/json
     }
 ### Delete A person
 
-DELETE http://localhost:3000/api/{id}
+DELETE /api/{id}
 .Response:
     {
         "message": "Person 'Updated Elon Musk' has been deleted"
