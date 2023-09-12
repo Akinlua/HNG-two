@@ -4,55 +4,50 @@
 This Documentation outlines the usage and endpoints of the CRUD API for managing a "Person" Model. The API is accessible at `https://hng-two.akinlua.repl.co/api` and for usage visit github url `https://github.com/Akinlua/HNG-two` to get started with the API on your local machine
 
 #### Table of Contents
-Setting Up Locally
-Create A person
-Read Persons
-Read A Person
-Update A Person
-Delete A Person
-Error Responses
-Limitation
-Assumptions
-Rate Limit
-Deploy on a server
-Conclusion
-
+1. [Setting Up Locally](#setting-up-locally)
+2. [API structure, formats and usage](#api-structure,-formats-and-usage)
+3. [Error Responses](#error-responses)
+4. [Limitation](#limitation)
+5. [Assumptions](#assumptions)
+6. [Rate Limit](#rate-limit)
+7. [Deploy on a server](#deploy-on-a-server)
+8. [Conclusion](#conclusion)
 
 
 #### Setting Up Locally
 Follow these steps to deploy the API on your local machine for development or testing purposes
 
-# Clone the Repository
+##### Clone the Repository
 git clone  https://github.com/Akinlua/HNG-two.git
 
-# install Dependencies
+##### install Dependencies
 npm install
 
-# Configure Environmental Variables
+##### Configure Environmental Variables
 Create a `.env` file in the project root and configure your database connection settings as MONGODB_URI.
 Also add the port on which you want to run the server on if you wish, add PORT in the env file with the port number to do so. Note: The application will run on 3000 if port not set.
 
-# Start the Application
+##### Start the Application
 npm start
 
-# Access the API Locally
+##### Access the API Locally
 Your API will be accessible at `http://localhost:PORT`
 
-## API structure, formats and usage
+#### API structure, formats and usage
 
-#### Create A Person
+##### Create A Person
 
-# Endpoint: `POST /api`
+###### Endpoint: `POST /api`
 
-# Content-Type: application/json
+Content-Type: application/json
 
-# Description: Creates a new person with the name provided in the request body and responds with the same name and it's id
+Description: Creates a new person with the name provided in the request body and responds with the same name and it's id
 
-# Request Body: 
+###### Request Body: 
 {
     "name": "Elon Musk"
 }
-# Response: 
+###### Response: 
 . HTTP Status: 201 Created
 . Body: 
 {
@@ -64,13 +59,13 @@ Your API will be accessible at `http://localhost:PORT`
 }
 
 
-#### Read Persons
+##### Read Persons
 
-# Endpoint: `GET /api`
+###### Endpoint: `GET /api`
 
-# Description: Retrieves a list of all persons with their name and respective id
+Description: Retrieves a list of all persons with their name and respective id
 
-# Response: 
+###### Response: 
 . HTTP Status: 200 OK
 . Body: 
 {
@@ -89,13 +84,13 @@ Your API will be accessible at `http://localhost:PORT`
 }
 
 
-#### Read A Person
+##### Read A Person
 
-# Endpoint: `GET /api/{id}`
+###### Endpoint: `GET /api/{id}`
 
-# Description: Retrieves a specfic person by their ID
+Description: Retrieves a specfic person by their ID
 
-# Response: 
+###### Response: 
 . HTTP Status: 200 OK
 . Body: 
 {
@@ -107,19 +102,19 @@ Your API will be accessible at `http://localhost:PORT`
 }
 
 
-#### Update A Person
+##### Update A Person
 
-# Endpoint: `PATCH /api/{id}`
+###### Endpoint: `PATCH /api/{id}`
 
-# Content-Type: application/json
+Content-Type: application/json
 
-# Description: Update the name of a specific person by their ID
+Description: Update the name of a specific person by their ID
 
-# Request Body: 
+###### Request Body: 
 {
     "name": "Updated Elon Musk"
 }
-# Response: 
+###### Response: 
 . HTTP Status: 200 OK
 . Body: 
 {
@@ -131,13 +126,13 @@ Your API will be accessible at `http://localhost:PORT`
 }
 
 
-#### Delete A Person
+##### Delete A Person
 
-# Endpoint: `DELETE /api/{id}`
+###### Endpoint: `DELETE /api/{id}`
 
-# Description: Delete a specific person by their ID
+Description: Delete a specific person by their ID
 
-# Response: 
+###### Response: 
 . HTTP Status: 200  OK
 . Body: 
 {
@@ -146,37 +141,37 @@ Your API will be accessible at `http://localhost:PORT`
 
 #### Error Responses
 
-# HTTP Status: 404 Not Found
-# Content-Type: application/json
+##### HTTP Status: 404 Not Found
+Content-Type: application/json
 
-# if a wrong ID was inputted you could get the below error
+###### if a wrong ID was inputted you could get the below error
 . Body: 
 {
     "error": "Person Not Found"
 }
-# if the url isn't correct or doesn't exist, you would get the below error
+###### if the url isn't correct or doesn't exist, you would get the below error
 . Body: 
 {
     "error": "Not Found"
 }
 
-# Cast error: if there was a problem with the id in the url, an error similar to the below will show
+###### Cast error: if there was a problem with the id in the url, an error similar to the below will show
 {
     "error": "No item found with id: 64fe0e3c5"
 }
 
-# HTTP Status: 400 Bad Request
-# Content-Type: application/json
+##### HTTP Status: 400 Bad Request
+Content-Type: application/json
 
-# Validation error: if there was an error with your input such as not providing a name you will receive a similar error to the one below with the exact problem
+###### Validation error: if there was an error with your input such as not providing a name you will receive a similar error to the one below with the exact problem
 {
     "error": "Validation Error: must provide a name""
 }
 
-# HTTP Status: 500 Internal Server Error
-# Content-Type: application/json
+##### HTTP Status: 500 Internal Server Error
+Content-Type: application/json
 
-# if there was any other error with the server, you will get the below error
+###### if there was any other error with the server, you will get the below error
 .Body:
 {
     "error": "Something Went wrong"
@@ -194,14 +189,14 @@ There is a Rate Limit of 100 requests per 15 minutes to help prevent overuse and
 #### Deploy on a Server
 To deploy the API on a server for production use, follow these genral steps. Specific may differ depending on your hosting provider
 
-# Choose a Hosting Provider such as AWS, Heroku and the likes
-# Set Up a server: Follow the hosting docs to create a server instance and ensure it meeets the requirements of your application, including node js and mongodb setup
-# Upload Your code
-# Install Dependencies on the server
-# Configure Environmental variables just as you did locally 
-# Start the Application
-# Configure your domain and DNS if needed 
-# Secure the API by obtaining and installing an SSL certificate to enable HTTPS 
+.Choose a Hosting Provider such as AWS, Heroku and the likes
+.Set Up a server: Follow the hosting docs to create a server instance and ensure it meeets the requirements of your application, including node js and mongodb setup
+.Upload Your code
+.Install Dependencies on the server
+.Configure Environmental variables just as you did locally 
+.Start the Application
+.Configure your domain and DNS if needed 
+.Secure the API by obtaining and installing an SSL certificate to enable HTTPS 
 
 
 #### Conclusion

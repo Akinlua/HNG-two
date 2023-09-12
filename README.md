@@ -53,7 +53,7 @@ The full API docs can be found in the file `DOCUMENTATION.md`
 Here are some examples on how to use the API:
 You can use any application such as Postman to make the requests
 
-# Create A person
+### Create A person
 
 POST http://localhost:3000/api
 Content-Type: application/json
@@ -62,10 +62,10 @@ Content-Type: application/json
     "name": "Elon Musk"
 }
 
-# Read a Person
+### Read a Person
 GET http://localhost:3000/api/{id}
 
-# Update a Person
+### Update a Person
 PATCH http://localhost:3000/api/{id}
 Content-Type: application/json
 
@@ -73,6 +73,6 @@ Content-Type: application/json
     "name": "Updated Elon Musk"
 }
 
-# Delete A person
+### Delete A person
 DELETE http://localhost:3000/api/{id}
 
