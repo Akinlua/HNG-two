@@ -1,9 +1,9 @@
 
-#### Introduction
+## Introduction
 
 This Documentation outlines the usage and endpoints of the CRUD API for managing a "Person" Model. The API is accessible at `https://hng-two.akinlua.repl.co/api` and for usage visit github url `https://github.com/Akinlua/HNG-two` to get started with the API on your local machine
 
-#### Table of Contents
+## Table of Contents
 1. [Setting Up Locally](#setting-up-locally)
 2. [API structure, formats and usage](#api-structure,-formats-and-usage)
 3. [Error Responses](#error-responses)
@@ -14,7 +14,7 @@ This Documentation outlines the usage and endpoints of the CRUD API for managing
 8. [Conclusion](#conclusion)
 
 
-#### Setting Up Locally
+## Setting Up Locally
 Follow these steps to deploy the API on your local machine for development or testing purposes
 
 ##### Clone the Repository
@@ -33,7 +33,7 @@ npm start
 ##### Access the API Locally
 Your API will be accessible at `http://localhost:PORT`
 
-#### API structure, formats and usage
+## API structure, formats and usage
 
 ##### Create A Person
 
@@ -66,6 +66,8 @@ Description: Creates a new person with the name provided in the request body and
 
 Endpoint: `GET /api`
 
+Content-Type: application/json
+
 Description: Retrieves a list of all persons with their name and respective id
 
 ###### Response: 
@@ -92,6 +94,8 @@ Description: Retrieves a list of all persons with their name and respective id
 ##### Read A Person
 
 Endpoint: `GET /api/{id}`
+
+Content-Type: application/json
 
 Description: Retrieves a specfic person by their ID
 
@@ -137,7 +141,9 @@ Description: Update the name of a specific person by their ID
 
 ##### Delete A Person
 
-###### Endpoint: `DELETE /api/{id}`
+Endpoint: `DELETE /api/{id}`
+
+Content-Type: application/json
 
 Description: Delete a specific person by their ID
 
@@ -150,7 +156,7 @@ Description: Delete a specific person by their ID
         "message": "Person 'Updated Elon Musk' has been deleted"
     }
 
-#### Error Responses
+## Error Responses
 
 ##### HTTP Status: 404 Not Found
 Content-Type: application/json
@@ -201,16 +207,16 @@ If there was any other error with the server, you will get the below error
         "error": "Something Went wrong"
     }
 
-#### Limitation
+## Limitation
 .The name field is not unique as a result, the API operations are performed using the id of the person
 
-#### Assumptions
+## Assumptions
 .Assumes the use of standard HTTP/HTTPS protocols for communication
 
-#### Rate Limit
+## Rate Limit
 There is a Rate Limit of 100 requests per 15 minutes to help prevent overuse and potential Dos attacks.
 
-#### Deploy on a Server
+## Deploy on a Server
 To deploy the API on a server for production use, follow these genral steps. Specific may differ depending on your hosting provider
 
 .Choose a Hosting Provider such as AWS, Heroku and the likes
@@ -230,5 +236,5 @@ To deploy the API on a server for production use, follow these genral steps. Spe
 .Secure the API by obtaining and installing an SSL certificate to enable HTTPS 
 
 
-#### Conclusion
+## Conclusion
 This API allows you to perform CRUD operations on the Person model. It also also has a field "__v" on every request which just shows the version.  Ensure that you provide Valid data in your requests to avoid receiving error responses.
