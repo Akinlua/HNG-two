@@ -5,7 +5,7 @@ const PersonSchema = new mongoose.Schema({
         type: String,
         required: [true, 'must provide a name'],
         trim: true,
-        maxlength: [200, 'name can not be more than 200 characters'],
+        maxlength: [200, 'name can not be more than 200 characters']
     }
 })
 
