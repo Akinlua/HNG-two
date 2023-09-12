@@ -66,23 +66,110 @@ POST http://localhost:3000/api
 
 Content-Type: application/json
 
+.Request:
+
     {
         "name": "Elon Musk"
     }
 
+.Response:
+    {
+        "person": {
+            "name": "Elon Musk",
+            "_id": "64fecbf1623b0333646ac6cb",
+            "__v": 0
+        }
+    }
+
 ### Read a Person
 GET http://localhost:3000/api/{id}
+
+.Response:
+
+    {
+        "person": {
+            "_id": "64fecbf1623b0333646ac6cb",
+            "name": "Elon Musk",
+            "__v": 0
+        }
+    }
 
 ### Update a Person
 PATCH http://localhost:3000/api/{id}
 
 Content-Type: application/json
 
+.Request:
+
     {
         "name": "Updated Elon Musk"
     }
 
+.Response:
+    {   
+        "person": {
+            "name": "Updated Elon Musk",
+            "_id": "64fecbf1623b0333646ac6cb",
+            "__v": 0
+        }
+    }
 ### Delete A person
 
 DELETE http://localhost:3000/api/{id}
+.Response:
+    {
+        "message": "Person 'Updated Elon Musk' has been deleted"
+    }
 
+
+
+## Error Responses
+
+#### HTTP Status: 404 Not Found
+Content-Type: application/json
+
+If a wrong ID was inputted you could get the below error
+
+. Body: 
+
+    {
+        "error": "Person Not Found"
+    }
+    
+If the url isn't correct or doesn't exist, you would get the below error
+
+. Body: 
+
+    {
+        "error": "Not Found"
+    }
+
+Cast error: if there was a problem with the id in the url, an error similar to the below will show
+
+. Body: 
+
+    {
+        "error": "No item found with id: 64fe0e3c5"
+    }
+
+#### HTTP Status: 400 Bad Request
+Content-Type: application/json
+
+Validation error: if there was an error with your input such as not providing a name you will receive a similar error to the one below with the exact problem
+
+. Body: 
+
+    {
+        "error": "Validation Error: must provide a name""
+    }
+
+#### HTTP Status: 500 Internal Server Error
+Content-Type: application/json
+
+If there was any other error with the server, you will get the below error
+
+.Body:
+
+    {
+        "error": "Something Went wrong"
+    }
